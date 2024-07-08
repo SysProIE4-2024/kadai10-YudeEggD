@@ -53,6 +53,14 @@ int mysystem(char *command) {
   rmdir: nothing: No such file or directory
   retval = 00000100
 
+  % ./mysysmain "nacmd"        <- 存在しないコマンド
+  mysystem:
+  sh: nacmd: command not found
+  retval = 00007f00
+  system:
+  sh: nacmd: command not found
+  retval = 00007f00
+
   % ./mysysmain                             <- 引数不足
   使い方 : ./mysysmain コマンド文字列          <- Usageの表示
 
